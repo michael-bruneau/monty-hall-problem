@@ -32,6 +32,7 @@ while (true) {
 
     // doorPicked
     doorPicked = randint(1, 3)
+    basic.showString('doorPicked is ' + (doorPicked).toString())
 
     // the wrong door that is revealed
     if (doorPicked - 1 > 0) {
@@ -47,5 +48,6 @@ while (true) {
         }
       }
     }
+    basic.showString('wrongDoorRevealed is ' + (wrongDoorRevealed).toString())
   }
 }
