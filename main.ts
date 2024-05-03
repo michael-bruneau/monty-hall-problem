@@ -9,6 +9,8 @@
 let winningDoor: number = null
 let lossingDoor1: number = null
 let lossingDoor2: number = null
+let doorPicked: number = null
+let wrongDoorRevealed: number = null
 
 while (true) {
   if (input.buttonIsPressed(Button.A) == true) {
@@ -27,5 +29,23 @@ while (true) {
     // find out were lossingDoor2 is
     lossingDoor2 = 6 - lossingDoor1 - winningDoor
     basic.showString('lossingDoor2 is ' + (lossingDoor2).toString())
+
+    // doorPicked
+    doorPicked = randint(1, 3)
+
+    // the wrong door that is revealed
+    if (doorPicked - 1 > 0) {
+      if (winningDoor - 1 > 0) {
+        wrongDoorRevealed = 1
+      } else {
+        if (doorPicked - 2 > 0 || doorPicked - 2 < 0) {
+          if (winningDoor - 2 > 0 || winningDoor - 2 < 0) {
+          wrongDoorRevealed = 2
+          }
+        } else {
+          wrongDoorRevealed = 3
+        }
+      }
+    }
   }
 }
