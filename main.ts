@@ -34,14 +34,16 @@ while (true) {
     if (doorPicked - 1 > 0) {
       if (winningDoor - 1 > 0) {
         wrongDoorRevealed = 1
-      } else {
-        if (doorPicked - 2 > 0 || doorPicked - 2 < 0) {
-          if (winningDoor - 2 > 0 || winningDoor - 2 < 0) {
-          wrongDoorRevealed = 2
-          }
-        } else {
-          wrongDoorRevealed = 3
-        }
+      }
+    }
+    if (doorPicked - 2 > 0 || doorPicked - 2 < 0) {
+      if (winningDoor - 2 > 0 || winningDoor - 2 < 0) {
+        wrongDoorRevealed = 2
+      }
+    }
+    if (doorPicked - 3 > 0 || doorPicked - 3 < 0) {
+      if (winningDoor - 3 > 0 || winningDoor - 3 < 0) {
+        wrongDoorRevealed = 3
       }
     }
   }
