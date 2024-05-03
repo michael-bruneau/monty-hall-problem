@@ -57,6 +57,7 @@ while (true) {
       if (doorSwitched == winningDoor) {
         winCounter = winCounter + 1
       }
+      loopCounter = loopCounter + 1
     }
   }
 
