@@ -14,7 +14,7 @@ while (true) {
   if (input.buttonIsPressed(Button.A) == true) {
     // picks random door
     winningDoor = randint(1, 3)
-    basic.showNumber(winningDoor)
+    basic.showString('winningDoor is ' + (winningDoor).toString())
 
     // find out were loosingDoor1 is
     if (winningDoor - 1 > 0) {
@@ -22,7 +22,10 @@ while (true) {
     } else {
       lossingDoor1 = 2 
     }
+    basic.showString('lossingDoor1 is ' + (lossingDoor1).toString())
 
-    lossingDoor2 = 6 - lossingDoor1 + winningDoor
+    // find out were lossingDoor2 is
+    lossingDoor2 = 6 - lossingDoor1 - winningDoor
+    basic.showString('lossingDoor2 is ' + (lossingDoor2).toString())
   }
 }
