@@ -16,7 +16,9 @@ let winCounter: number = null
 let loopCounter: number = 0
 let checkingWhichDoorNewDoorWasPicked: number = null
 
+// loop
 while (true) {
+  // play game 1000 times and always switch door
   if (input.buttonIsPressed(Button.A) == true) {
     while (loopCounter <= 1000) {
       // picks random door
@@ -55,13 +57,17 @@ while (true) {
       // doorSwitched
       doorSwitched = 6 - doorPicked - wrongDoorRevealed
 
+      // keep track how many times you won
       if (doorSwitched == winningDoor) {
         winCounter = winCounter + 1
       }
+
+      // loopCounter
       loopCounter = loopCounter + 1
     }
   }
 
+  // play game a 1000 times but only switch somtimes
   if (input.buttonIsPressed(Button.B) == true) {
     while (loopCounter <= 1000) {
       // picks random door
@@ -102,6 +108,7 @@ while (true) {
         doorSwitched = randint(2, 3)
       }
 
+      // find out wether you switch or not
       if (wrongDoorRevealed == 2) {
         checkingWhichDoorNewDoorWasPicked = randint(1,2) 
         if (checkingWhichDoorNewDoorWasPicked == 1) {
@@ -111,18 +118,20 @@ while (true) {
           doorSwitched = 3
         }
       }
-
       if (wrongDoorRevealed == 3) {
         doorSwitched = randint(1,2)
       }
 
+      // to keep track of how many times you win
       if (doorSwitched == winningDoor) {
         winCounter = winCounter + 1
       }
+      // loopCounter
       loopCounter = loopCounter + 1
     }
   }
-
+  
+  // show how many times you won
   if (winCounter > 0) {
     basic.showNumber(winCounter)
   }
