@@ -122,4 +122,8 @@ while (true) {
       loopCounter = loopCounter + 1
     }
   }
+
+  if (winCounter > 0) {
+    basic.showNumber(winCounter)
+  }
 }
